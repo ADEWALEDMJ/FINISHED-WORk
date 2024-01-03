@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Load URLs in iframes</title>
+    <title>Open Multiple URLs</title>
 </head>
 
 <body>
@@ -18,21 +18,15 @@
             // Add more URLs as needed
         ];
 
-        // Function to create iframes for each URL
-        function createIframes() {
-            var container = document.body;
-
+        // Function to open URLs in new tabs
+        function openMultipleTabs() {
             urlsToOpen.forEach(function (url) {
-                var iframe = document.createElement('iframe');
-                iframe.src = url;
-                iframe.style.width = '100%';
-                iframe.style.height = '300px'; // Set an appropriate height
-                container.appendChild(iframe);
+                window.open(url, '_blank');
             });
         }
 
         // Call the function on page load
-        window.onload = createIframes;
+        window.onload = openMultipleTabs;
     </script>
 
 </body>
